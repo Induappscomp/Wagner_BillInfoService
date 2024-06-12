@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37B7153C-64EB-44EF-808F-0FB49E2D3388}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TradingBell.WebCat.EasyAsk</RootNamespace>
+    <AssemblyName>TradingBell.WebCat.EasyAsk</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\Wagner_2012\EasyAsk\bin\Debug\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.StringTemplate">
+      <HintPath>..\..\Wagner_2012\EasyAsk\bin\Debug\Antlr3.StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.3.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WAGNER\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASPClient\EasyAskConstants.cs" />
+    <Compile Include="ASPClient\IBreadCrumbTrail.cs" />
+    <Compile Include="ASPClient\ICarveOut.cs" />
+    <Compile Include="ASPClient\IDataDescription.cs" />
+    <Compile Include="ASPClient\IFeaturedProducts.cs" />
+    <Compile Include="ASPClient\IGroupedResult.cs" />
+    <Compile Include="ASPClient\IGroupedResultSet.cs" />
+    <Compile Include="ASPClient\Impl\AttributeInfo.cs" />
+    <Compile Include="ASPClient\Impl\AttributesInfo.cs" />
+    <Compile Include="ASPClient\Impl\BreadCrumbTrail.cs" />
+    <Compile Include="ASPClient\Impl\CarveOut.cs" />
+    <Compile Include="ASPClient\Impl\CategoriesInfo.cs" />
+    <Compile Include="ASPClient\Impl\DataDescription.cs" />
+    <Compile Include="ASPClient\Impl\DisplayFormat.cs" />
+    <Compile Include="ASPClient\Impl\DOMUtilities.cs" />
+    <Compile Include="ASPClient\Impl\FeaturedProducts.cs" />
+    <Compile Include="ASPClient\Impl\GroupedPageLayout.cs" />
+    <Compile Include="ASPClient\Impl\GroupedSetInfo.cs" />
+    <Compile Include="ASPClient\Impl\GroupInfo.cs" />
+    <Compile Include="ASPClient\Impl\ItemDescriptions.cs" />
+    <Compile Include="ASPClient\Impl\ItemRow.cs" />
+    <Compile Include="ASPClient\Impl\NavigateAttribute.cs" />
+    <Compile Include="ASPClient\Impl\NavigateCategory.cs" />
+    <Compile Include="ASPClient\Impl\NavigateHierarchy.cs" />
+    <Compile Include="ASPClient\Impl\NavigateNode.cs" />
+    <Compile Include="ASPClient\Impl\Options.cs" />
+    <Compile Include="ASPClient\Impl\RemoteEasyAsk.cs" />
+    <Compile Include="ASPClient\Impl\RemoteFactory.cs" />
+    <Compile Include="ASPClient\Impl\RemoteResults.cs" />
+    <Compile Include="ASPClient\INavigateAttribute.cs" />
+    <Compile Include="ASPClient\INavigateCategory.cs" />
+    <Compile Include="ASPClient\INavigateHierarchy.cs" />
+    <Compile Include="ASPClient\INavigateNode.cs" />
+    <Compile Include="ASPClient\INavigateResults.cs" />
+    <Compile Include="ASPClient\IOptions.cs" />
+    <Compile Include="ASPClient\IRemoteEasyAsk.cs" />
+    <Compile Include="ASPClient\IResultRow.cs" />
+    <Compile Include="EasyAsk_WAGNER.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CatalogDB\CatalogDB.csproj">
+      <Project>{7A492C69-5995-41BB-90D1-96EBB650F7F1}</Project>
+      <Name>CatalogDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonServices\CommonServices.csproj">
+      <Project>{9E003E83-B25A-4B17-A5D0-53A030B4FAB5}</Project>
+      <Name>CommonServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helpers.csproj">
+      <Project>{6FB9CAD4-7481-4C2C-95CD-299F24E1979D}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

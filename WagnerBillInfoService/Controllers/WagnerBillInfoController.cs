@@ -106,17 +106,17 @@ namespace WagnerBillInfoService.Controllers
                             objErrorHandler.CreatePayLog(response.Content);
                             objErrorHandler.CreatePayLog(response.ResponseStatus.ToString());
 
-                            objOrderServices.UpdatePaymentOrderStatus(OrderID, PaymentID, false);
+                            //objOrderServices.UpdatePaymentOrderStatus(OrderID, PaymentID, false);
                             SecurePayService objSecurePayService = new SecurePayService();
 
                             objSecurePayService.GetPaymentRequest_braintree(OrderID, PaymentID, jObject.returnData.type,
                             jObject.returnData.cardHolder, jObject.returnData.firstSixDigits + "xxx" + jObject.returnData.lastFourDigits, "", jObject.returnData.expiryMonth + "/" + jObject.returnData.expiryYear, "Yes", "000/" + mertransid + "", "01", jObject.uuid, jObject.transactionStatus, jObject.transactionStatus, "TI");
-
+                            objErrorHandler.CreatePayLog("After update"+ OrderID);
                             //objOrderServices.UpdatePaymentOrderStatus_Express(OrderID, PaymentID, false);
                             //objOrderServices.UpdatePAYMENTSELECTION(OrderID, "TI");
-                            TBWTemplateEngine tbwtEngine = new TBWTemplateEngine();
-                            tbwtEngine.SendMail_AfterPaymentSP(OrderID, (int)OrderServices.OrderStatus.Payment_Successful, false, jObject.returnData.type);
-                            tbwtEngine.SendMail_Review(OrderID, (int)OrderServices.OrderStatus.Payment_Successful, false);
+                            //TBWTemplateEngine tbwtEngine = new TBWTemplateEngine();
+                            //tbwtEngine.SendMail_AfterPaymentSP(OrderID, (int)OrderServices.OrderStatus.Payment_Successful, false, jObject.returnData.type);
+                            //tbwtEngine.SendMail_Review(OrderID, (int)OrderServices.OrderStatus.Payment_Successful, false);
 
                         }
                         else if (jObject.transactionStatus.ToLower() == "error" && (ordstatus == OrderServices.OrderStatus.Proforma_Payment_Required.ToString() || ordstatus == OrderServices.OrderStatus.OPEN.ToString()))
